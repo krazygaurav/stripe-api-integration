@@ -1,0 +1,27 @@
+.card-wrapper{
+  width: 25%;
+  box-shadow: 0 0 4px 2px #c1c1c1;
+  padding: 25px;
+  margin: 150px auto;
+}
+
+.btn{
+  padding: 6px;
+  font-size: 1.2em;
+  width: 100%;
+  background: #ffdfdf;
+  margin-top: 24px;
+  border: 0;
+  color: #b37070;
+  letter-spacing: 10px;
+}
+
+.form-control{
+  width: 100%;
+  border: 0;
+  margin-bottom: 10px;
+  box-shadow: 0 0 2px 1px #c1c1c1 inset;
+  padding: 10px;
+  outline: 0;
+  box-sizing: border-box;
+}

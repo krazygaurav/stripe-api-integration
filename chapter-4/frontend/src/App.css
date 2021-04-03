@@ -1,0 +1,40 @@
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-card {
+  width: 100%;
+  max-width: 550px;
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  border: 1px solid var(--light);
+  border-radius: 6px;
+  padding: 15px 20px;
+}
+
+.cart-item > .title {
+  color: var(--dark);
+  margin-bottom: 5px;
+}
+
+.cart-item > .price {
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.cart-item:last-child {
+  margin-bottom: 0px;
+}
+
+.cart-total {
+  font-weight: 600;
+  color: var(--dark);
+  font-size: 24px;
+}
