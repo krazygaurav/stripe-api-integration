@@ -38,23 +38,18 @@ const PayPage = () => {
       return;
     }
 
-    const result = await stripe.confirmCardPayment(checkoutSecret, {
+    const result = await stripe.confirmCardSetup(checkoutSecret, {
       payment_method: {
         card: elements.getElement(CardElement),
         billing_details: billingDetails,
       },
-      setup_future_usage: "off_session",
     });
 
     if (result.error) {
-      console.log(result.error)
-      alert(result.error.type + " : " + result.error.message);
+      alert(result.error.message || result.error);
     } else {
       // The payment has been processed!
-      if (result.paymentIntent.status === "succeeded") {
-        alert("Payment successful");
-        window.location.href = "/checkout/cart";
-      }
+      alert("Card setup successful");
     }
   };
 
