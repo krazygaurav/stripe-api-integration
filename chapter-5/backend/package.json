@@ -1,22 +1,14 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "scripts": {
-    "frontend": "npm start",
-    "backend": "node index.js",
-    "start": "concurrently \" npm run backend \" \" cd ../frontend && npm start \" "
-  },
-  "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
+    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "nodemon": "^2.0.7",
-    "stripe": "^8.137.0",
     "dotenv": "^8.2.0",
-    "axios": "^0.21.1"
+    "express": "^4.17.1",
+    "stripe": "^8.138.0"
   }
 }

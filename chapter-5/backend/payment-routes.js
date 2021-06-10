@@ -6,36 +6,21 @@ const { getCartItems } = require("./store-service");
 
 router.post("/", async (req, res) => {
   const { userId } = req;
-  const { customerId } = req.body;
 
   const cartItems = await getCartItems(userId);
 
-  const paymentIntent = await stripe.paymentIntents.create({
-    amount: cartItems.amount * 100,
-    currency: "inr",
-    payment_method_types: ["card"],
-    capture_method: "manual",
+  // retrieve customer id from database for the user or if doesn't exist then create customer and store in DB
+  const customer = await stripe.customers.create();
+
+  const setupIntent = await stripe.setupIntents.create({
+    customer: customer.id,
   });
 
   return res.json({
-    checkoutSecret: paymentIntent.client_secret,
+    checkoutSecret: setupIntent.client_secret,
     ...cartItems,
   });
 });
-
-
-router.post("/capture-payment", async (req, res) => {
-  const { userId } = req;
-  const { paymentIntentId } = req.body;
-
-  const paymentIntent = await stripe.paymentIntents.capture(paymentIntentId);
-
-  return res.json({
-    checkoutSecret: paymentIntent.client_secret,
-    ...cartItems,
-  });
-});
-
 
 router.post("/charge-customer", async (req, res) => {
   const { customerId } = req.query;

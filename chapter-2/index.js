@@ -1,6 +1,6 @@
 const Stripe = require("stripe");
 
-const stripe = Stripe("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
+const stripe = Stripe("{{SECRET_KEY}}");
 
 async function listAllProducts() {
   const products = await stripe.products.list();
