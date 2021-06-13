@@ -48,8 +48,9 @@ const PayPage = () => {
     if (result.error) {
       alert(result.error.message || result.error);
     } else {
-      // The payment has been processed!
-      alert("Card setup successful");
+      if (window.confirm("Payment successful. Repeat Again?")) {
+        window.location.href = "/checkout/cart";
+      }
     }
   };
 
