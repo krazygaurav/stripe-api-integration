@@ -52,8 +52,9 @@ const PayPage = () => {
     } else {
       // The payment has been processed!
       if (result.paymentIntent.status === "succeeded") {
-        alert("Payment successful");
-        window.location.href = "/checkout/cart";
+        if (window.confirm("Payment successful. Repeat Again?")) {
+          window.location.href = "/checkout/cart";
+        }
       }
     }
   };

@@ -23,7 +23,7 @@ function App() {
           <Router basename="/checkout">
             <Container className="app-container">
               <Switch>
-                <Route path="/cart">
+                <Route path="/">
                   <CartPage />
                 </Route>
                 <Route path="/billing-details">

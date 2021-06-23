@@ -15,6 +15,6 @@ app.use(authMiddleware);
 
 app.use("/checkout", paymentRoutes);
 
-const PORT = 5000;
+const PORT = 3000;
 
 app.listen(PORT, () => console.log(`SERVER RUNNING ON PORT: ${PORT}`));
